@@ -1,0 +1,33 @@
+hash: 7e155d6d9a656e5499a97a916b49c79acb6a317697f5f43e4c28efef00ea3596
+updated: 2018-01-04T13:54:20.7166005-06:00
+imports:
+- name: github.com/gorilla/context
+  version: 08b5f424b9271eedf6f9f0ce86cb9396ed337a42
+- name: github.com/gorilla/mux
+  version: 7f08801859139f86dfafd1c296e2cba9a80d292e
+- name: github.com/hashicorp/consul
+  version: 6be97eb8bb3e9bacdee92562e48b398d6f116b57
+  subpackages:
+  - api
+- name: github.com/hashicorp/go-cleanhttp
+  version: 06c9ea3a335b7443026f8124b22619524420291b
+- name: github.com/hashicorp/go-rootcerts
+  version: 6bb64b370b90e7ef1fa532be9e591a81c3493e00
+- name: github.com/hashicorp/serf
+  version: a110af454b635c75adc2b7eee541af2c68666d97
+  subpackages:
+  - coordinate
+- name: github.com/mitchellh/go-homedir
+  version: b8bc1bf767474819792c23f32d8286a45736f1c6
+- name: github.com/robfig/cron
+  version: b024fc5ea0e34bc3f83d9941c8d60b0622bfaca4
+- name: gopkg.in/mgo.v2
+  version: 3f83fa5005286a7fe593b055f0d7771a7dce4655
+  subpackages:
+  - bson
+  - internal/json
+  - internal/sasl
+  - internal/scram
+- name: gopkg.in/yaml.v2
+  version: 287cf08546ab5e7e37d55a84f7ed3fd1db036de5
+testImports: []
