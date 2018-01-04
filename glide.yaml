@@ -1,6 +1,8 @@
 package: github.com/edgexfoundry/core-metadata-go
 import:
 - package: github.com/edgexfoundry/consul-client-go
+  vcs: git
+  version: master
 - package: github.com/edgexfoundry/core-domain-go
   subpackages:
   - models
@@ -8,7 +10,11 @@ import:
   vcs: git
   version: master
 - package: github.com/edgexfoundry/support-logging-client-go
+  vcs: git
+  version: master
 - package: github.com/edgexfoundry/support-notifications-client-go
+  vcs: git
+  version: master
 - package: github.com/gorilla/mux
   version: ^1.6.0
 - package: github.com/robfig/cron
