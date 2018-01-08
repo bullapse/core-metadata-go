@@ -73,6 +73,8 @@ func main() {
 	DOCKERMONGO = configuration.MongoDBHost + ":" + strconv.Itoa(configuration.MongoDBPort)
 	DBUSER = configuration.MongoDBUserName
 	DBPASS = configuration.MongoDBPassword
+	DBRETRY = configuration.DBRetry
+	DBRETRYWAIT = configuration.DBRetryWait
 
 	// Update logging based on configuration
 	loggingClient.RemoteUrl = configuration.LoggingRemoteURL
@@ -87,9 +89,13 @@ func main() {
 		loggingClient.Error(err.Error())
 		return
 	}
-	if !dbConnect() {
-		loggingClient.Error("Error connecting to Database")
-		return
+
+	// Retry to Connect to Database if fails for a config number of times and wait
+	dbtry := 1
+	for !dbConnect && dbtry <= DBRETRY {
+		loggingClient.Error("Error connecting to Database on try: " + strconv.Itoa(dbtry))
+		dbtry++
+		time.Sleep(time.Second * DBRETRYWAIT)
 	}
 
 	// Start heartbeat

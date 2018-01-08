@@ -27,6 +27,8 @@ import (
 type ConfigurationStruct struct {
 	ApplicationName                     string
 	DBType                              string
+	DBRETRY                             int
+	DBRetryWait                         int
 	MongoDatabaseName                   string
 	MongoDBUserName                     string
 	MongoDBPassword                     string
@@ -70,6 +72,8 @@ var (
 	PROTOCOL            = "http"
 	SERVERPORT          = "48081"
 	DOCKERMONGO         = "edgex-mongo:27017"
+	DBRETRY             = 5
+	DBRETRYWAIT         = 5
 	DBUSER              = "meta"
 	DBPASS              = "password"
 	MONGODATABASE       = "metadata"
